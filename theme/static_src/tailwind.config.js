@@ -42,7 +42,15 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        colors: {
+            background: '#fffefeff',
+            containerBackground: '#F2F5FFFD'
+        },
+        extend: {
+            fontFamily: {
+                montserrat: ['MONTSERRAT', 'cursive'],
+            },
+        },
     },
     plugins: [
         /**

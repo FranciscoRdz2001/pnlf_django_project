@@ -22,6 +22,7 @@ env = environ.Env()
 environ.Env.read_env()
 
 # Register theme
+# python -m pip install git+https://github.com/timonweb/django-tailwind.git
 TAILWIND_APP_NAME = 'theme'
 
 # Node path

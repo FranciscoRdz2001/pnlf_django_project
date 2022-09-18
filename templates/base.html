@@ -1,18 +1,78 @@
 {% load static tailwind_tags %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    <title>Django Tailwind</title>
+	<head>      
+    <title>PNFL Fotball</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		{% tailwind_css %}
 	</head>
-	<body class="bg-gray-900 font-serif leading-normal tracking-normal">
-		<div class="container mx-auto">
-			<section class="flex items-center justify-center h-screen">
-				<h1 class="text-5xl">PNLF + FOTBALL = ❤️</h1>
-			</section>
-		</div>
-	</body>
+    <body class="bg-background font-montserrat leading-normal tracking-normal pr-10 pl-10 pt-5 ">
+        <div id="TOP BAR" class="flex flex-wrap justify-between items-end mx-auto">
+            <a class="flex items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/2655/2655990.png" class="mr-6 h-12 sm:h-18" alt="Flowbite Logo" />
+                <p class="text-6xl font-semibold text-gray-800">PNFL</p>
+            </a>
+            <div class="md:w-auto">
+            <ul class="flex p-4 rounded-lg bg-gray-200">
+                <div class="block text-gray-700">
+                    <ap class="py-4 pr-4 pl-4 text-blue-400 font-medium">Home</ap>
+                    <ap class="py-4 pr-4 pl-4 hover:text-blue-400 font-medium">Add Player</ap>
+                    <ap class="py-4 pr-4 pl-4 hover:text-blue-400 font-medium">Add Team</ap>
+                    <ap class="py-4 pr-4 pl-4 hover:text-blue-400 font-medium">Add Stadium</ap>
+                </div>
+            </ul>
+        </div>
+        </div>
+        <div class="pt-20 grid place-items-center text-6xl font-bold whitespace-nowrap">
+            <ap class="text-gray-800">Welcome to</ap>
+            <ap class=" text-blue-400">PNFL</ap>
+        </div>
+        <div id="Tables Row" class="pt-10 container mx-auto">
+            <div class="grid grid-cols-3 text-2xl overflow-x-clip place-items-start justify-items-center">
+                <div class="flex flex-col place-items-center">
+                    <div class="flex pb-10">
+                      Teams
+                    </div>
+                        {% for team in teams_list %}
+                            <div>Teams</div>
+                        {% empty %}
+                            {% include "data_container_component.html" with data="Sorry, this list does not have Teams..."%}
+                        {% endfor %}
+                </div>
+              <div id="Players list" class="flex justify-center">
+                <div class="flex flex-col place-items-center">
+                    <div class="flex pb-10">
+                      Players
+                    </div>
+                        {% for player in players_list %}
+                        {% include "data_container_component.html" with data=player.name%}
+                        <!-- <div class="pb-4">
+                            <div class="bg-containerBackground grow h-32 w-[30vw] p-2 rounded-xl">
+                                <div class="text-xs">{{player.name}}</div>
+                            </div>
+                        </div> -->
+                        {% empty %}
+                            {% include "data_container_component.html" with data="Sorry, this list does not have Players..."%}
+                        {% endfor %}
+                </div>
+              </div>
+              <div id="Stadiums list" class="flex justify-center">
+                <div class="flex flex-col place-items-center">
+                    <div class="flex pb-10">
+                      Stadiums
+                    </div>
+                        {% for stadium in stadiums_list %}
+                            {% include "data_container_component.html" with data=stadium.name%}
+                        {% empty %}
+                            {% include "data_container_component.html" with data="Sorry, this list does not have Stadiums..."%}
+                        {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
 </html>
