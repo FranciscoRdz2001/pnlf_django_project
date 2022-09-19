@@ -8,7 +8,7 @@ from .models import Stadium
 # Create your views here.
 def CreateStadium(request):
 
-    print(f'Create player endpoint by request method = {request.method} ')
+    print(f'Create Stadium endpoint by request method = {request.method} ')
 
     if request.method == 'POST':
         stadium = CreateStadiumForm(request.POST)
@@ -57,7 +57,6 @@ def UpdateStadium(request, pk):
         'form': form
     }
     return render(request, 'stadiums/add_stadium.html', context)
-    return
 
 def DeleteStadium(request, pk):
     stadium = Stadium.objects.get(pk=pk)
@@ -66,5 +65,4 @@ def DeleteStadium(request, pk):
 
 def GetStadiums(request):
     players = Stadium.objects.all()
-    
     return
