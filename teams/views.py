@@ -14,6 +14,7 @@ def CreateTeam(request):
             name = team.cleaned_data.get('name')
             trainer = team.cleaned_data.get('trainer')
             players_quantity = team.cleaned_data.get('players_quantity')
+            stadium = team.cleaned_data.get('stadium')
 
 
             p, created = Team.objects.get_or_create(
@@ -40,7 +41,8 @@ def UpdateTeam(request, pk):
         if team.is_valid():
             t.name = team.cleaned_data.get('name')
             t.trainer = team.cleaned_data.get('trainer')
-            t.players_quantity = team.cleaned_data.get('players_quantity')
+            t.players_quantity = t.players_quantity
+            t.stadium = team.cleaned_data.get('stadium')
             t.save()
         return redirect('/')
 

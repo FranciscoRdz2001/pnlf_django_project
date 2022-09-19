@@ -24,7 +24,7 @@
                       Teams
                     </div>
                         {% for team in teams_list %}
-                            {% include "teams_container.html" with name=team.name trainer=team.trainer quantity=team.players_quantity object=team%}
+                            {% include "teams_container.html" with name=team.name trainer=team.trainer quantity=team.players_quantity object=team stadium=team.stadium.name quantity=team.players_quantity%}
                         {% empty %}
                             {% include "container_error.html" with message="Sorry, this list does not have Teams..."%}
                         {% endfor %}
@@ -35,7 +35,7 @@
                       Players
                     </a>
                         {% for player in players_list %}
-                            {% include "players_data.html" with name=player.name age=player.age number=player.number nationality=player.nationality object=player%}
+                            {% include "players_data.html" with name=player.name age=player.age number=player.number nationality=player.nationality object=player shirt_number=player.shirt_number team=player.team.name%}
                         {% empty %}
                             {% include "container_error.html" with message="Sorry, this list does not have Players..."%}
                         {% endfor %}

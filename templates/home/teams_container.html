@@ -1,9 +1,22 @@
 {% extends 'data_container_template.html' %}
 
 {% block content %}
-    <p>Nombre: {{ name }}</p>
+    <p>Name: {{ name }}</p>
     <p>Trainer: {{ trainer }}</p>
-    <p>Players quantity: {{ quantity }}</p>
+    <p>
+        {% if not quantity or quantity == 0 %}
+            No players in this team
+        {% else %}
+            Players: {{ quantity }}
+        {% endif %}
+    </p>
+    <p>
+        {% if not stadium %}
+            No stadium
+        {% else %}
+            Stadium: {{ stadium }}
+        {% endif %}
+    </p>
 {% endblock content%}
 
 {% block object %} object {% endblock object %}
