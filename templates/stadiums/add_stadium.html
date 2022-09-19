@@ -1,0 +1,23 @@
+{% extends '../add_template.html' %}
+
+
+{% block title %}Stadium{% endblock title %}
+
+{% block content %}
+    <div>
+        <label for="name" class="text-sm text-gray-900 dark:text-gray-500">Name</label>
+        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-400 block w-full p-3 placeholder-gray-400" placeholder="Francisco" required>
+    </div>
+    <div>
+        <label for="address" class="text-sm text-gray-900 dark:text-gray-500">Address</label>
+        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-400 block w-full p-3 placeholder-gray-400" placeholder="Tijuana, Baja california" required>
+    </div>
+    <div>
+        <label for="phone" class="text-sm text-gray-900 dark:text-gray-500">Phone</label>
+        <input type="tel" class="bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-400 block w-full p-3 placeholder-gray-400" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+    </div>
+    <div>
+        <label for="capacity" class="text-sm text-gray-900 dark:text-gray-500">Capacity</label>
+        <input type="number" class="bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-400 block w-full p-3 placeholder-gray-400" min="0" placeholder="99" required>
+    </div>
+{% endblock content%}

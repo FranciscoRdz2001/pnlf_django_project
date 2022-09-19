@@ -1,0 +1,30 @@
+{% load static tailwind_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>      
+    <title>Create new</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+    <body class="bg-background font-montserrat leading-normal tracking-normal pr-10 pl-10 pt-5 ">
+        <div class="pt-20 flex flex-col place-items-center text-6xl font-bold whitespace-nowrap">
+            <ap class="text-gray-800">Enter the data to {% block createOrEdit %}{% endblock createOrEdit%} a</ap>
+            <ap class=" text-blue-400">{% block title %}{% endblock title %}</ap>
+        </div>
+        <div id="Tables Row" class="pt-20 container mx-auto">
+            <div class="grid grid-cols-3 text-2xl overflow-x-clip place-items-start justify-items-center">
+              <div id="Players list" class="flex justify-center">
+                <div class="flex flex-col place-items-center">
+                    <a class="flex pb-5">
+                        Requested information:
+                    </a>
+                    {% block content %}{% endblock content%}
+                </div>
+            <div id="Stadiums list" class="flex justify-center">
+        </div>
+    </body>
+</html>

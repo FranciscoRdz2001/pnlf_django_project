@@ -42,13 +42,13 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        colors: {
-            background: '#fffefeff',
-            containerBackground: '#F2F5FFFD'
-        },
         extend: {
             fontFamily: {
                 montserrat: ['MONTSERRAT', 'cursive'],
+            },
+            colors: {
+                background: '#fffefeff',
+                containerBackground: '#F2F5FFFD'
             },
         },
     },

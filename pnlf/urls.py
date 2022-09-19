@@ -19,6 +19,8 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('home.urls')),
     path('admin/', admin.site.urls),
-    path('player/', include('players.urls')),
+    path('players/', include('players.urls')),
+    path('teams/', include('teams.urls')),
+    path('stadiums/', include('stadiums.urls')), # stadiums/addstadium
     path("__reload__/", include("django_browser_reload.urls")),
 ]

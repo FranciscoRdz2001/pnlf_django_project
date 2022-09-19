@@ -58,7 +58,7 @@ LOCAL_APPS = [
     'stadiums',
     'teams',
     'tailwind',
-    'theme'
+    'theme',
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS
@@ -79,7 +79,14 @@ ROOT_URLCONF = 'pnlf.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': [
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "templates/home"),
+            os.path.join(BASE_DIR, "templates/team"),
+            os.path.join(BASE_DIR, "templates/player"),
+            os.path.join(BASE_DIR, "templates/teams"),
+            os.path.join(BASE_DIR, "templates/add_template"),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

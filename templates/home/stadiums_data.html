@@ -1,0 +1,23 @@
+{% extends 'data_container_template.html' %}
+
+{% block content %}
+    <p>Nombre: {{ name }}</p>
+    <p>Address: {{ address }}</p>
+    <p>Phone: {{ phone }}</p>
+    <p>Capacity: {{ capacity }}</p>
+{% endblock content%}
+
+{% block object %} object {% endblock object %}
+
+{% block buttons %} 
+    <a href="{{'stadiums/editstadium/'}}{{object.pk}}">
+        <button class="flex items-center justify-center bg-blue-300 hover:bg-blue-500 text-white hover:text-white h-[2vw] w-[5vw] rounded">
+            Edit
+        </button>
+    </a>
+    <a href="{{'stadiums/deletestadium/'}}{{object.pk}}">
+        <button class="flex items-center justify-center bg-red-300 hover:bg-red-500 text-white hover:text-white h-[2vw] w-[5vw] rounded" type="submit">
+            Remove
+        </button>
+    </a>
+{% endblock buttons %}

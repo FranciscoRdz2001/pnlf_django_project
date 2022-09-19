@@ -1,0 +1,15 @@
+{% load static tailwind_tags %}
+{% load static %}
+
+    <div class="pb-4">
+        <div class="bg-containerBackground flex h-min w-[25vw] p-4 rounded-xl">
+            <div id="Tables Row" class="flex flex-col container mx-auto justify-items-center">
+                <div class="flex items-center flex-col w-full text-[0.75vw]">
+                    {% block content %}{% endblock content %}
+                    <div class="flex flex-row w-min text-[0.85vw] gap-x-[0.5vw] pt-5">
+                        {% block buttons %}{% endblock buttons %}                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,6 +1,9 @@
 from django.urls import path
-from . import views
+from .views import *
 
 urlpatterns = [
-    path('stadiums', views.stadiums)
+    path('getstadiums', GetStadiums),
+    path('addstadium', CreateStadium),
+    path('deletestadium/<int:pk>', DeleteStadium),
+    path('editstadium/<int:pk>', UpdateStadium),
 ]
