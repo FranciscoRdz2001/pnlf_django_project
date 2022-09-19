@@ -12,7 +12,7 @@
 	</head>
     <body class="bg-background font-montserrat leading-normal tracking-normal pr-10 pl-10 pt-5 ">
         <div class="pt-20 flex flex-col place-items-center text-6xl font-bold whitespace-nowrap">
-            <ap class="text-gray-800">Enter the data to {% block createOrEdit %}{% endblock createOrEdit%} a</ap>
+            <ap class="text-gray-800">Enter the data to {{action}} a</ap>
             <ap class=" text-blue-400">{% block title %}{% endblock title %}</ap>
         </div>
         <div id="Tables Row" class="pt-20 container mx-auto">
@@ -22,7 +22,22 @@
                     <a class="flex pb-5">
                         Requested information:
                     </a>
-                    {% block content %}{% endblock content%}
+                    <form method="post" enctype= "multipart/form-data">
+                        {% csrf_token %}
+                        <div class="text-gray-900 dark:text-gray-500 flex flex-col place-items-start text-sm border border-gray-300 rounded-lg focus:ring-blue-400 focus:border-blue-400  w-full p-3 placeholder-gray-400">
+                            {{form}}
+                        </div>
+                        <div class="flex flex-row w-min text-[0.85vw] gap-x-[0.5vw] pt-5">
+                            {% if action == "edit" %}
+                                <button class="flex items-center justify-center bg-blue-300 hover:bg-blue-500 text-white hover:text-white h-[2vw] w-[5vw] rounded" type="submit" value="OK">Edit</button>
+                            {% else %}
+                                <button class="flex items-center justify-center bg-blue-300 hover:bg-blue-500 text-white hover:text-white h-[2vw] w-[5vw] rounded" type="submit" value="OK">Create</button>
+                            {% endif %}
+                            <a href="/" class="flex items-center justify-center bg-red-300 hover:bg-red-500 text-white hover:text-white h-[2vw] w-[5vw] rounded">
+                                Cancel
+                            </a>
+                        </div>
+                    </form>
                 </div>
             <div id="Stadiums list" class="flex justify-center">
         </div>

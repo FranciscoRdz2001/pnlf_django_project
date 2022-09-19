@@ -11,7 +11,7 @@ def CreatePlayer(request):
         player = CreatePlayerForm(request.POST)
         if player.is_valid():
             name = player.cleaned_data.get('name')
-            age = player.cleaned_data.get('age')
+            age = player.cleaned_data.get('address')
             number = player.cleaned_data.get('number')
             nationality = player.cleaned_data.get('nationality')
 
@@ -27,6 +27,7 @@ def CreatePlayer(request):
 
     form = CreatePlayerForm()
     context = {
+        'action': 'create',
         'form': form
     }
     return render(request, 'player/add_player.html', context)
@@ -48,7 +49,7 @@ def UpdatePlayer(request, pk):
 
     form = CreatePlayerForm(instance=p)
     context = {
-        'action': 'EDIT',
+        'action': 'edit',
         'form': form
     }
     return render(request, 'player/add_player.html', context)
