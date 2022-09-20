@@ -13,13 +13,19 @@
     <body class="bg-background font-montserrat leading-normal tracking-normal pr-10 pl-10 pt-5 ">
         {% include "header.html" %}
         </div>
-        <div class="pt-20 grid place-items-center text-6xl font-bold whitespace-nowrap">
+        <div class="pt-20 flex flex-col place-items-center text-6xl font-bold whitespace-nowrap">
+          <div class="w-[8vw]">
+            <img src="{% static '../../../../static/images/football.png" alt="Image">
+          </div>
             <ap class="text-gray-800">Welcome to</ap>
             <ap class=" text-blue-400">PNFL</ap>
         </div>
         <div id="Tables Row" class="pt-10 container mx-auto">
             <div class="grid grid-cols-3 text-2xl overflow-x-clip place-items-start justify-items-center">
                 <div class="flex flex-col place-items-center">
+                  <div class="w-[7vw]">
+                    <img src="{% static '../../../../static/images/team.png" alt="Image">
+                  </div>
                     <div class="flex pb-10">
                       Teams
                     </div>
@@ -31,6 +37,9 @@
                 </div>
               <div id="Players list" class="flex justify-center">
                 <div class="flex flex-col place-items-center">
+                  <div class="w-[7vw]">
+                    <img src="{% static '../../../../static/images/football-player.jpg" alt="Image">
+                  </div>
                     <a class="flex pb-10">
                       Players
                     </a>
@@ -43,6 +52,9 @@
               </div>
               <div id="Stadiums list" class="flex justify-center">
                 <div class="flex flex-col place-items-center">
+                  <div class="w-[7vw]">
+                    <img src="{% static '../../../../static/images/field.png" alt="Image">
+                  </div>
                     <div class="flex pb-10">
                       Stadiums
                     </div>

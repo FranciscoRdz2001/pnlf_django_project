@@ -6,7 +6,7 @@ class Player(models.Model):
     
     name = models.CharField(max_length=32, default="Generic player", null=False, blank=False)
     age = models.IntegerField(null=False,default=0)
-    number = models.IntegerField(null=False, default=0)
+    number = models.CharField(max_length=10, default="1234567890", null=False, blank=False)
     nationality = models.CharField(max_length=32,null=False,default='Generic Nationality')
     shirt_number = models.IntegerField(null=False)
     team = models.ForeignKey(Team, on_delete=models.SET_NULL, null=True, blank=True)

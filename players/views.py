@@ -11,6 +11,7 @@ def CreatePlayer(request):
 
     if request.method == 'POST':
         player = CreatePlayerForm(request.POST)
+        print(player.is_valid())
         if player.is_valid():
             name = player.cleaned_data.get('name')
             age = player.cleaned_data.get('age')

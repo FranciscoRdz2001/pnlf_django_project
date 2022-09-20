@@ -48,7 +48,7 @@ module.exports = {
             },
             colors: {
                 background: '#fffefeff',
-                containerBackground: '#F2F5FFFD'
+                containerBackground: '#e5e7eb'
             },
         },
     },
